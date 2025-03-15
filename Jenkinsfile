@@ -18,13 +18,13 @@ pipeline
 		stage("Build with Maven")
 		{
 			steps{
-				sh 'mvn clean package'
+				sh 'mvn clean package'E
 
 			}
 		}
 		stage('Run Docker Container'){
 			steps{
-				sh'docker run -d -p 8080:8080 --name spring-rest $DOCKER-IMAG'
+				sh'docker run -d -p 8080:8080 --name spring-rest $DOCKER-IMAGE'
 			}
 		}
 	}
@@ -35,7 +35,7 @@ pipeline
 		failure{
 			echo "pipeline failed"
 		}
-	
+E	
 
 	}
 
