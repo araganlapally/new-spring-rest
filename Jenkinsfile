@@ -9,13 +9,15 @@ pipeline
 	stages
 	{
 		stage("Clone Repository")
-		{
+		
+
 			steps{
 				git 'https://github.com/araganlapally/new-spring-rest-git
+				
+  
 '
 			}
-		}
-		stage("Build with Maven")
+		}		sage("Build wih Maven")
 		{
 			steps{
 				sh 'mvn clean package'_
@@ -35,10 +37,9 @@ pipeline
 		failure{
 			echo "pipeline failed"
 		}
-_	
+_	
 
 	}
 
 }	
 
-}
