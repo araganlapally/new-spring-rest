@@ -17,7 +17,8 @@ pipeline
   
 '
 			}
-		}		sage("Build wih Maven")
+		}
+		stage("Build with Maven")
 		{
 			steps{
 				sh 'mvn clean package'_
@@ -43,3 +44,4 @@ _
 
 }	
 
+}
