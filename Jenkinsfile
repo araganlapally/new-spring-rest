@@ -3,9 +3,9 @@ pipeline
 	agent any
 	environment
 	{
-		DOCKER-IMAGE="new-spring-rest:latest"
+		DOCKER_IMAGE="new-spring-rest:latest"
 
-	}	
+	}E
 	stages
 	{
 		stage("Clone Repository")
@@ -18,13 +18,13 @@ pipeline
 		stage("Build with Maven")
 		{
 			steps{
-				sh 'mvn clean package'E
+				sh 'mvn clean package'_
 
 			}
 		}
 		stage('Run Docker Container'){
 			steps{
-				sh'docker run -d -p 8080:8080 --name spring-rest $DOCKER-IMAGE'
+				sh'docker run -d -p 8080:8080 --name spring-rest $DOCKER_IMAGE'
 			}
 		}
 	}
@@ -35,7 +35,7 @@ pipeline
 		failure{
 			echo "pipeline failed"
 		}
-E	
+_	
 
 	}
 
